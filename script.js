@@ -29,7 +29,11 @@ function DisplayBooks(library) {
         pages.innerHTML = library[i].pages
         newRow.appendChild(pages)
         const read = document.createElement('td')
-        read.innerHTML = library[i].read
+        if(library[i].read==true){
+            read.innerHTML="Yes"
+        } else{
+            read.innerHTML="No"
+        }
         newRow.appendChild(read)
     }
 }
