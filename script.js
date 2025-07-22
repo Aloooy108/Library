@@ -1,13 +1,16 @@
 let myLibrary = []
 let counter = 0
 const table = document.getElementById('bookTable')
-//book constructor
-function Book(title, author, pages, read, id) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-    this.id = id
+//book class
+class Book {
+    constructor(title, author, pages, read, id) {
+        this.title = title
+        this.author = author
+        this.pages = pages
+        this.read = read
+        this.id = id
+    }
+
 
 }
 
@@ -36,7 +39,7 @@ function DisplayBooks(library) {
     if (library[library.length - 1].read == true) {
         read.innerHTML = "Yes"
     } else {
-        library[library.length-1].read=false
+        library[library.length - 1].read = false
         read.innerHTML = "No"
     }
     newRow.appendChild(read)
@@ -46,8 +49,8 @@ function DisplayBooks(library) {
     readBTN.innerHTML = "Read"
     newRow.appendChild(readBTN)
     readBTN.addEventListener('click', ($read) => {
-        if(read.innerHTML)
-        read.innerHTML='Yes'
+        if (read.innerHTML)
+            read.innerHTML = 'Yes'
     })
 
     //delete button
